@@ -1,0 +1,392 @@
+Quelle: https://svn.apache.org/repos/asf/shindig/trunk/php/docs/style-guide.html
+
+Overview
+
+* Use PHP 5.2+ whenever feasible.
+* Follow the C++ formatting rules in spirit.
+* Provide a header with copyright and author info.
+* Separate business logic, data, and presentational layers. In other words, keep the Model-View-Controller pattern in mind. It is very handy and can make PHP development a lot easier.
+* Avoid heavy logic within presentational pages. While some processing and logic is done when it is nestled within a tag soup of HTML, avoid making it complex. One should not be doing more than basic foreach (), if (), and $obj->get*() within a presentation document source.
+* Unit test your functions using PHPUnit.
+* Naming: FunctionNamesLike, $localVariableName, $objectVariable, ClassNamesLike, MethodNamesLike, CONSTANTS_LIKE_THIS. Global names (classes, functions, variables, defines) must be prefixed to prevent naming clashes with PHP itself. This approach includes preventing prefixes that clash with PHP or are likely to. Apart from constants, prevent underscores in your names unless you simulate namespaces and are sure you can switch to real namespaces once PHP has them (and of course for object variables).
+* Getters/Setters: Required, name them getFoo(), setFoo().
+* Magic Getters/Setters: Do not use.
+* Indentation: 2 spaces, no tabs.
+* Line Wrapping: 120 chars.
+* Whitespace: Use sparingly. Opening curly brace starts on earliest line possible; initializations are not aligned; multi-line argument lists indented at first arg or spacing+2 if very long.
+* Parentheses: only where required.
+* Braces: always.
+* Strings: Use single quoted strings over double quoted.
+* Comments: phpdoc (similar to javadoc), and follow the C++ style in spirit. See http://www.phpdoc.org for detailed information.
+* Filenames: Match classname, generally end in .php.
+* PHP tags: <?php only. Always have a space (or newline) after an opening tag for multi-line PHP code. Do not use a closing ?> tag at the end of a file.
+* PHP Tags: Avoid switching between PHP and HTML often.
+* Comments: Only // and /* */ Two spaces after code if comments on the same line as code. If you intend to write a write a shell script in PHP a hashbang line is ok.
+* Error Reporting: Set error reporting to E_ALL|E_NOTICE, and enable error logging; use E_STRICT if possible.
+* Only use new form of super globals (e.g. $_SERVER rather than deprecated $HTTP_SERVER_VARS) .
+* Avoid using ${var} inside strings and never use {$var} inside strings. Instead prefer to separate the string and use concatenation.
+
+Style
+PHP Tags
+Use only the full PHP tag: <?php (lower case). This is because (1) short tags rely on the PHP configuration, (2) it violates xml specs (<? starts a PI (processing instruction) and must be followed by a name), and (3) it is more readable. For readability, have a space or newline after the opening tag for multi-line PHP code. Do not use the closing ?> php tag at the end of a file. It's optional and will help prevent unwanted output. This applies to all PHP files including those that mix PHP and HTML. You will still need to close PHP blocks if you intersperse them with HTML, but if the file closes with PHP code, then leave off the closing ?> tag.
+
+File header
+
+Provide a file header that denotes copyright (in apache projects we chose not to list the author). This should also contain a small description of what the script does.
+
+<?php
+/**
+* Licensed to the Apache Software Foundation (ASF) under one
+* or more contributor license agreements. See the NOTICE file
+* distributed with this work for additional information
+* regarding copyright ownership. The ASF licenses this file
+* to you under the Apache License, Version 2.0 (the
+* "License"); you may not use this file except in compliance
+* with the License. You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing,
+* software distributed under the License is distributed on an
+* "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+* KIND, either express or implied. See the License for the
+* specific language governing permissions and limitations under the License.
+*
+* General script description.
+*/
+
+PHP and HTML Inlined Together
+
+Avoid mish-mashing PHP and HTML together. Prefer to generate HTML within PHP (remember, you can single quote, double quote, and Heredoc strings. For large blocks of HTML use Heredoc syntax, as most editors will attempt to syntax highlight the HTML, which is very handy. Consider using when you only need to output a few variables. When using echo to output HTML code, use single quoted HTML attributes in double quoted PHP strings and vice versa. Also avoid ${name} constructs inside echo, prefer to separate the string and use concatenation.
+
+<?php
+echo <<<HTML
+<html>
+<head>
+<title>$title</title>
+</head>
+</html>
+HTML;
+
+In a somewhat similar fashion, you can put newlines into PHP strings directly.
+
+<?php
+echo "<html>
+<head>
+<title>$title</title>
+</head>";
+// ...
+
+Additionally, remember you do not need to concatenate all your strings when you echo them out. You can simple echo them out in sequence.
+
+<?php
+echo "<html>",
+"<head>",
+"<title>$title</title>";
+// ...
+
+If you must intersperse, comment the closing brace of conditional logic with what block the brace is ending, and follow one of these two rules consistantly for inlining PHP in HTML:
+
+1. Put the PHP tags on their own line at the same indentation level as the parent HTML tag:
+
+<html>
+<head>...</head>
+<body>
+<div>
+<p>
+<?php
+if (true) { ... }
+?>
+</p>
+</div>
+</body>
+</html>
+
+2. Put the PHP tags at the indentation level assuming there were no HTML tags:
+
+<?php
+// ...code...
+?>
+<html>
+<head>...</head>
+<body>
+<?php
+if ($cond) {
+?>
+<div>...content...</div>
+<?php
+if ($cond2) {
+?>
+<p>...content...</p>
+<?php
+} // end if $cond2
+} // end if $cond
+?>
+</body>
+</html>
+
+Indentation
+
+Indent code blocks with 2 spaces. For line continuations, align vertically or with a hanging indent of 4 spaces.
+
+// Vertically aligned
+print $foo->getBar() . ' - baz '
+. $baz->getTitle() . "\n";
+
+// 4 space hanging indent
+print $foo->getBar() . ' - baz ' .
+$baz->getTitle() . "\n";
+
+Parentheses
+
+Do not use parentheses when using language constructs such as echo, print, include, require, unset, isset, empty. These are not functions and don't require parentheses around their parameters. Some language constructs behave like functions (for example, have return values) and some do not. Language constructs cannot be called using variable functions.
+
+echo 'My cat', $fluffysName, ' likes to code.'; // good
+echo ('My cat', $fluffysName, ' likes to code.'); // bad
+
+General Variable Naming Rules
+Globals, Constants, Defines
+
+Use all capital letters with separating underscores, and enable case sensitivity with define()'d values. Prefix globals with a package-specific name to avoid name conflicts.
+
+* $APP_GLOBAL_VARIABLE
+* $APP_CONSTANT
+* define('APP_DEFINED_CONSTANT', 'value', true)
+
+Local Variables
+
+Name them concisely. :) Make names descriptive without being overly long. You can use $i or $c for short loops, but $k and $v are not good variable names ever.
+
+Examples
+When iterating over an array, use names that describe what the variables are:
+
+$pets = array('cat' => 1, 'dog' => 3, 'rat' => 2);
+
+foreach ($pets as $pet=>$count) {
+//...
+}
+
+A few obvious examples:
+
+$userName;
+$ldapGroup;
+$costCenter; // good variable names
+
+$data;
+$thing; // too vague
+
+Don't create new variables by appending an integer to an existing variable name:
+
+$user1;
+$user2; // Not useful names -- what differentiates $user1 from $user2?
+
+Removing vowels from variable names may shorten them, but don't remove so many that it becomes incomprehensible:
+
+$grp; // What is this? group? gripe? grape? grep?
+
+Don't use indecipherable abbreviations:
+
+$fb; // You might know what this stand for, but does everyone else?
+$fooBar; // On the other hand, everyone gets this.
+
+Classes and Function Related
+Default Parameters
+Often the policy is to dissallow default parameters completely, but for PHP, this becomes a bit problematic because there is limited polymorphism, no overloading, and untyped data.
+
+As such, the only default parameter value allowed is NULL (NULL, not the empty string '' or boolean FALSE). This is to allow primitive overloading.
+
+Global Functions
+
+Classes, Class Properties, and Class Methods
+Class Names
+
+Class names are ProperCased, meaning, they start with a capital letter with subsequent words capitalized. Acryonyms are treated as normal words. Global names should be prefixed to prevent clashes with PHP itself.
+
+* AppClassName
+* AppXmlParser
+* AppHtmlXmlOmgClass
+
+Class Properties, Attributes, and the like
+
+Use camelCasing for class instance variables.
+
+class AppFoo {
+private $myPrivateVar; // PHP 5
+public $myPublicVar; // Try to avoid public members.
+}
+
+For class static variables, follow the general naming rules. There is little reason to use them, though.
+
+For class constants, follow the general naming rules.
+
+Method Names, both Static and Instance
+
+Use ProperCase? for class methods. Private methods should be documented as private. Getters and setters are required; name them getFoo(), setFoo().
+
+Files and File Names
+
+* Use .php extension, with all lower case, use _ for 'spaces'
+* Only Executable files should have side effects; Configuration files should ONLY initialize script, never modify saved data; Other files should have no side effects from inclusion.
+* Executable files: These are the files the user is suppose to be requesting. e.g. index.php
+o They should be all lowercase. Try to keep them sweet, short, and simple; this is the name links point to and the user has to remember.
+* Class definitions: These are the files that define classes.
+o A file should only contain a single class definition. Small, closely related classes within the same file are fine.
+o They should be named after the class
+o The class file may contain other, small helper classes.
+o Extension: .php .
+* Batch includes: This is a file that only serves as a wrapper or include a set of other files, usually common ones that you would always include together.
+o Name these files logically, eg util.php, domhelpers.php, formatters.php
+* Configuration files: These files should end in .php, be lowercase, named after their purpose, and have suffix to distinguish their purpose (if needed) and reside in a 'config' or equivilent directory. e.g. config.php, globals.php, setup.php, config-dev.php, config-ajax.php
+
+Documentation
+Use PhpDoc syntax, which is almost exactly like JavaDoc syntax. See http://www.phpdoc.org for a detailed tag listing. See examples below for quick reference.
+
+File Header
+Start each file with copyright notice comment what's in the file.
+
+/**
+* Licensed to the Apache Software Foundation (ASF) under one
+* or more contributor license agreements. See the NOTICE file
+* distributed with this work for additional information
+* regarding copyright ownership. The ASF licenses this file
+* to you under the Apache License, Version 2.0 (the
+* "License"); you may not use this file except in compliance
+* with the License. You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing,
+* software distributed under the License is distributed on an
+* "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+* KIND, either express or implied. See the License for the
+* specific language governing permissions and limitations under the License.
+*
+* This is the file description.
+*/
+
+Class Header
+Each class should be documented.
+
+/**
+* This documents the class below.
+* @package SomePackage (if applicable)
+*/
+class SomeClass {
+// each class data member should also be documented
+// see below for variable documentation examples
+}
+
+Methods and Functions
+Methods and functions should also be documented.
+
+/**
+* Sample method/function docblock here.
+* @param string $paramName sample parameter of type string
+* @param boolean $boolParam sample parameter of type boolean
+* @return integer sample return value of type integer
+*/
+function SomeFunction($paramName, $boolParam) {
+//...
+return 1;
+}
+
+Variable tags
+Some usefule variable tags:
+
+* @access [private|protected] (public is assumed when no @access tag is used) Private variables will not be shown in generated documentation.
+* @var datatype description (dataype mixed is assumed when no @var tag used)
+
+/**
+* User id for database lookup
+* @access private
+* @var integer user id in ldap
+*/
+private $userId;
+
+General docblocks
+Add docblocks elsewhere as needed:
+
+/**
+* Why this include file is important
+*/
+require_once 'includeFile.php';
+
+Whitespace
+
+Long identifiers or values present problems for aligned initialization lists, so always prefer non-aliged initialization.
+
+Best Practices
+Magic Quotes
+There are 3 rules when it comes to the magic_quotes_* settings of PHP:
+
+1. Turn them off.
+2. Turn them off.
+3. Make sure they're turned off (they default to on)
+
+In a nutshell: they modify data without your knowledge, are being removed from PHP 6, are deplored by the entire PHP community, do not provide any security, do not really do what you expect in general and make life as a developer much, much harder. Turn them off.
+
+Error Reporting
+Set error reporting to, at least, E_ALL|E_NOTICE. Use E_STRICT if you can, but this may not always be possible. This will generate a lot of messages, but eliminating them will create much more reliable code. While it is easy to ignore unset indices because they are expected to return NULL, this often obscures another bug: Why is it unset to begin with?
+
+Avoid References
+
+Avoid using references because they can create quite a headache and it introduces the potential for side-effects from functions. They should only be used when passing around very large amounts of data or when absolutely necessary. Also, remember that 'references' are somewhat of a misnomer in PHP. They are more like unix symlinks than a C pointer. See the PHP manual on references for more information: http://www.php.net/manual/en/language.references.php
+
+Avoid addslashes() and stripslashes()
+Do not use these functions to escape or otherwise sanitize data. Many languages do not use, or have more than just, \ as an escape character. Be aware that using these functions requires knowledge of if the data was previously stripped or added, though, making it very difficult to use them within functions that will be called more than one.
+
+As a general rule do not use either of them.
+
+When to encode and escape data
+Data should be kept in as clean a state as long as possible. Only encode data when it is being displayed or when absolutely required.
+
+* DO Encode and escape:
+o When doing output. htmlspecialchars($str, ENT_QUOTES) for html data. urlencode() for (surprisingly) urls. JavaScript will require addslashes() and htmlspecialchars().
+o Use bind parameters for database queries if possible, otherwise use the appropriate escape function (eg, mysql_real_escape_string())
+o When sending formatted data to preserve original meaning. This is for situations when you are using cURL or making remote requests and run into situation and have a data string such as:
+
+$name = "me&you<3"; $data = "name=$name";
+
+* DO NOT Encode:
+o Data saved to the datastore (unless special circumstances). The reasoning is similar to why one should avoid addslashes(). When you pull data out of the datastore you must assume it is or isn't encoded, and all subsequent code must operate on that assumption, too. You still need to escape it, though.
+
+PHP Specific Notes about Control Structures, Functions, Misc
+Referencial foreach (), foreach ($array as $key => & $value) {
+Overview: the $value still exists as a reference when the loop is done, and rebinding the value will rebind it _as a reference_
+
+This means two things: 1. Do not use it as it does not do what you expect and it's side effects are very hard to understand for other people. Design your code in a different way.
+
+2. Modifying the $value after the loop is done will affect the last entry of the array, thus, you should unset() the $value to prevent accidentally modifying it.
+
+foreach ($array as $key => & $value) {
+// ...code...
+} unset ($value); // unset is on the same line as }
+
+The purpose of putting unset() on the same line is to think of it as a language requirement rather than a coding practice.
+
+3. Rebinding or copying the $value means it is a reference, and it will be assigned as such in subsequent code. This means, in a sense, those elements of the array cease to be the default copy-by-value. If you do a var_dump() of the two arrays, you'll notice that each element is a reference and they're referring to the same data.
+
+$a = array("one", "two", "three");
+foreach($a as &$value) {
+$value = "$value ref";
+}
+
+$b = $a;
+$b[0] = "b one"
+print $a; // "b one", "two ref", "three ref"
+
+Magic PHP Features
+
+Do not use:
+
+* object member overloading because it harms readability.
+
+Do use:
+
+* __autoload, sparingly. It can greatly simplify dependency issues with sessions and reduces the i/o of require/include, but can make code harder to understand since you don't know what is being included until runtime.
+* __clone()
+* __toString to implement default HTML output.
+
+Avoid: __set_state
+
+See http://www.php.net/manual/en/language.oop5.magic.php for a complete list of magic methods. Also see http://us3.php.net/manual/en/language.constants.predefined.php for a list of magic constants.

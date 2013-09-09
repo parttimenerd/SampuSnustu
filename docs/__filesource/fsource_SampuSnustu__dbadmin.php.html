@@ -1,0 +1,131 @@
+<html>
+<head>
+<title>File Source for dbadmin.php</title>
+<link rel="stylesheet" type="text/css" href="../media/style.css">
+</head>
+<body>
+
+<table border="0" cellspacing="0" cellpadding="0" height="48" width="100%">
+  <tr>
+    <td class="header_top">SampuSnustu</td>
+  </tr>
+  <tr><td class="header_line"><img src="../media/empty.png" width="1" height="1" border="0" alt=""  /></td></tr>
+  <tr>
+    <td class="header_menu">
+        
+                                    
+                              		  [ <a href="../classtrees_SampuSnustu.html" class="menu">class tree: SampuSnustu</a> ]
+		  [ <a href="../elementindex_SampuSnustu.html" class="menu">index: SampuSnustu</a> ]
+		  	    [ <a href="../elementindex.html" class="menu">all elements</a> ]
+    </td>
+  </tr>
+  <tr><td class="header_line"><img src="../media/empty.png" width="1" height="1" border="0" alt=""  /></td></tr>
+</table>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="200" class="menu">
+      <b>Packages:</b><br />
+              <a href="../li_SampuSnustu.html">SampuSnustu</a><br />
+            <br /><br />
+                  
+      
+                </td>
+    <td>
+      <table cellpadding="10" cellspacing="0" width="100%" border="0"><tr><td valign="top">
+
+<h1 align="center">Source for file dbadmin.php</h1>
+<p>Documentation is available at <a href="../SampuSnustu/_dbadmin.php.html">dbadmin.php</a></p>
+<div class="src-code">
+<ol><li><div class="src-line"><a name="a1"></a><span class="src-php">&lt;?php</span></div></li>
+<li><div class="src-line"><a name="a2"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a3"></a><span class="src-comm">/*</span></div></li>
+<li><div class="src-line"><a name="a4"></a><span class="src-comm">&nbsp;*&nbsp;Copyright&nbsp;(C)&nbsp;2011-2012&nbsp;Johannes&nbsp;Bechberger</span></div></li>
+<li><div class="src-line"><a name="a5"></a><span class="src-comm">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a6"></a><span class="src-comm">&nbsp;*&nbsp;This&nbsp;program&nbsp;is&nbsp;free&nbsp;software:&nbsp;you&nbsp;can&nbsp;redistribute&nbsp;it&nbsp;and/or&nbsp;modify</span></div></li>
+<li><div class="src-line"><a name="a7"></a><span class="src-comm">&nbsp;*&nbsp;it&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License&nbsp;as&nbsp;published&nbsp;by</span></div></li>
+<li><div class="src-line"><a name="a8"></a><span class="src-comm">&nbsp;*&nbsp;the&nbsp;Free&nbsp;Software&nbsp;Foundation,&nbsp;either&nbsp;version&nbsp;3&nbsp;of&nbsp;the&nbsp;License,&nbsp;or</span></div></li>
+<li><div class="src-line"><a name="a9"></a><span class="src-comm">&nbsp;*&nbsp;(at&nbsp;your&nbsp;option)&nbsp;any&nbsp;later&nbsp;version.</span></div></li>
+<li><div class="src-line"><a name="a10"></a><span class="src-comm">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a11"></a><span class="src-comm">&nbsp;*&nbsp;This&nbsp;program&nbsp;is&nbsp;distributed&nbsp;in&nbsp;the&nbsp;hope&nbsp;that&nbsp;it&nbsp;will&nbsp;be&nbsp;useful,</span></div></li>
+<li><div class="src-line"><a name="a12"></a><span class="src-comm">&nbsp;*&nbsp;but&nbsp;WITHOUT&nbsp;ANY&nbsp;WARRANTY;&nbsp;without&nbsp;even&nbsp;the&nbsp;implied&nbsp;warranty&nbsp;of</span></div></li>
+<li><div class="src-line"><a name="a13"></a><span class="src-comm">&nbsp;*&nbsp;MERCHANTABILITY&nbsp;or&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE.&nbsp;&nbsp;See&nbsp;the</span></div></li>
+<li><div class="src-line"><a name="a14"></a><span class="src-comm">&nbsp;*&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License&nbsp;for&nbsp;more&nbsp;details.</span></div></li>
+<li><div class="src-line"><a name="a15"></a><span class="src-comm">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a16"></a><span class="src-comm">&nbsp;*&nbsp;You&nbsp;should&nbsp;have&nbsp;received&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License</span></div></li>
+<li><div class="src-line"><a name="a17"></a><span class="src-comm">&nbsp;*&nbsp;along&nbsp;with&nbsp;this&nbsp;program.&nbsp;&nbsp;If&nbsp;not,&nbsp;see&nbsp;&lt;http://www.gnu.org/licenses/&gt;.</span></div></li>
+<li><div class="src-line"><a name="a18"></a><span class="src-comm">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a19"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a20"></a><span class="src-inc">require_once&nbsp;</span><span class="src-str">'FSystem.php'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a21"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a22"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a23"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@package</span><span class="src-doc">&nbsp;SampuSnustu</span></div></li>
+<li><div class="src-line"><a name="a24"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@subpackage</span><span class="src-doc">&nbsp;Utils</span></div></li>
+<li><div class="src-line"><a name="a25"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a26"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a27"></a><span class="src-doc">&nbsp;*&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a28"></a><span class="src-doc">&nbsp;*&nbsp;Datenbankverbindungsobjekt</span></div></li>
+<li><div class="src-line"><a name="a29"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@var&nbsp;</span><span class="src-doc-type">mysqli&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a30"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a31"></a><span class="src-var">$db&nbsp;</span>=&nbsp;<span class="src-id">null</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a32"></a><span class="src-var">$server&nbsp;</span>=&nbsp;<span class="src-str">&quot;localhost&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a33"></a><span class="src-var">$username&nbsp;</span>=&nbsp;<span class="src-str">&quot;root&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a34"></a><span class="src-var">$database&nbsp;</span>=&nbsp;<span class="src-str">&quot;sampusnustu&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a35"></a><span class="src-var">$password&nbsp;</span>=&nbsp;<span class="src-str">&quot;&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a36"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a37"></a><span class="src-comm">/*</span></div></li>
+<li><div class="src-line"><a name="a38"></a><span class="src-comm">&nbsp;*&nbsp;Datenbank&nbsp;falls&nbsp;nicht&nbsp;vorhanden&nbsp;erzeugen</span></div></li>
+<li><div class="src-line"><a name="a39"></a><span class="src-comm">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a40"></a><span class="src-var">$db&nbsp;</span>=&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id">mysqli</span><span class="src-sym">(</span><span class="src-var">$server</span><span class="src-sym">,&nbsp;</span><span class="src-var">$username</span><span class="src-sym">,&nbsp;</span><span class="src-var">$password</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a41"></a><span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">query</span><span class="src-sym">(</span><span class="src-str">'CREATE&nbsp;DATABASE&nbsp;IF&nbsp;NOT&nbsp;EXISTS&nbsp;`'&nbsp;</span>.&nbsp;<span class="src-var">$database&nbsp;</span>.&nbsp;<span class="src-str">'`'</span><span class="src-sym">)&nbsp;</span><span class="src-key">or&nbsp;</span><span class="src-key">die</span><span class="src-sym">(</span><span class="src-str">&quot;Datenbankerzeugung:&nbsp;&quot;&nbsp;</span>.&nbsp;<a href="http://www.php.net/mysqli_error">mysqli_error</a><span class="src-sym">(</span><span class="src-var">$db</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a42"></a><span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">close</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a43"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a44"></a>echo&nbsp;<span class="src-str">'Datenbank&nbsp;erfolgreich&nbsp;erzeugt.&lt;br/&gt;'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a45"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a46"></a><span class="src-var">$db&nbsp;</span>=&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id">mysqli</span><span class="src-sym">(</span><span class="src-var">$server</span><span class="src-sym">,&nbsp;</span><span class="src-var">$username</span><span class="src-sym">,&nbsp;</span><span class="src-var">$password</span><span class="src-sym">,&nbsp;</span><span class="src-var">$database</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a47"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a48"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a49"></a><span class="src-doc">&nbsp;*&nbsp;Notwendige&nbsp;Tabellen&nbsp;erzeugen,&nbsp;wenn&nbsp;sie&nbsp;nicht&nbsp;vorhanden&nbsp;sind</span></div></li>
+<li><div class="src-line"><a name="a50"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a51"></a><span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">query</span><span class="src-sym">(</span><span class="src-str">&quot;CREATE&nbsp;TABLE&nbsp;IF&nbsp;NOT&nbsp;EXISTS&nbsp;chatmsg(id&nbsp;INT&nbsp;NOT&nbsp;NULL&nbsp;AUTO_INCREMENT,&nbsp;time&nbsp;BIGINT,&nbsp;user_id&nbsp;INT,&nbsp;content&nbsp;TEXT,&nbsp;uid&nbsp;VARCHAR(100),&nbsp;PRIMARY&nbsp;KEY(id))&quot;</span><span class="src-sym">)&nbsp;</span><span class="src-key">or&nbsp;</span><span class="src-key">die</span><span class="src-sym">(</span><span class="src-str">&quot;Chatmsg-Tabelle:&nbsp;&quot;&nbsp;</span>.&nbsp;<a href="http://www.php.net/mysqli_error">mysqli_error</a><span class="src-sym">(</span><span class="src-var">$db</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a52"></a><span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">query</span><span class="src-sym">(</span><span class="src-str">&quot;CREATE&nbsp;TABLE&nbsp;IF&nbsp;NOT&nbsp;EXISTS&nbsp;user(id&nbsp;INT&nbsp;NOT&nbsp;NULL&nbsp;AUTO_INCREMENT,&nbsp;name&nbsp;VARCHAR(50),&nbsp;mailadress&nbsp;VARCHAR(50),&nbsp;isadmin&nbsp;INT,&nbsp;pwdstring&nbsp;VARCHAR(200),&nbsp;ctime&nbsp;BIGINT,&nbsp;mtime&nbsp;BIGINT,&nbsp;signatur&nbsp;TEXT,&nbsp;description&nbsp;TEXT,&nbsp;active&nbsp;INT,&nbsp;last_chat_time&nbsp;BIGINT,&nbsp;last_forum_time&nbsp;BIGINT,&nbsp;sessionid&nbsp;VARCHAR(200),&nbsp;uid&nbsp;VARCHAR(120),&nbsp;PRIMARY&nbsp;KEY(id))&quot;</span><span class="src-sym">)&nbsp;</span><span class="src-key">or&nbsp;</span><span class="src-key">die</span><span class="src-sym">(</span><span class="src-str">&quot;User-Tabelle:&nbsp;&quot;&nbsp;</span>.&nbsp;<a href="http://www.php.net/mysqli_error">mysqli_error</a><span class="src-sym">(</span><span class="src-var">$db</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a53"></a><span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">query</span><span class="src-sym">(</span><span class="src-str">&quot;CREATE&nbsp;TABLE&nbsp;IF&nbsp;NOT&nbsp;EXISTS&nbsp;thread(id&nbsp;INT&nbsp;NOT&nbsp;NULL&nbsp;AUTO_INCREMENT,&nbsp;title&nbsp;TEXT,&nbsp;description&nbsp;TEXT,&nbsp;parent&nbsp;INT,&nbsp;count&nbsp;INT,&nbsp;ctime&nbsp;BIGINT,&nbsp;mtime&nbsp;BIGINT,&nbsp;uid&nbsp;VARCHAR(120),&nbsp;creator&nbsp;INT,&nbsp;PRIMARY&nbsp;KEY(id))&quot;</span><span class="src-sym">)&nbsp;</span><span class="src-key">or&nbsp;</span><span class="src-key">die</span><span class="src-sym">(</span><span class="src-str">&quot;Thread-Tabelle:&nbsp;&quot;&nbsp;</span>.&nbsp;<a href="http://www.php.net/mysqli_error">mysqli_error</a><span class="src-sym">(</span><span class="src-var">$db</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a54"></a><span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">query</span><span class="src-sym">(</span><span class="src-str">&quot;CREATE&nbsp;TABLE&nbsp;IF&nbsp;NOT&nbsp;EXISTS&nbsp;forum(id&nbsp;INT&nbsp;NOT&nbsp;NULL&nbsp;AUTO_INCREMENT,&nbsp;title&nbsp;TEXT,&nbsp;description&nbsp;TEXT,&nbsp;parent&nbsp;INT,&nbsp;ctime&nbsp;BIGINT,&nbsp;mtime&nbsp;BIGINT,&nbsp;uid&nbsp;VARCHAR(120),&nbsp;creator&nbsp;INT,&nbsp;PRIMARY&nbsp;KEY(id))&quot;</span><span class="src-sym">)&nbsp;</span><span class="src-key">or&nbsp;</span><span class="src-key">die</span><span class="src-sym">(</span><span class="src-str">&quot;Forum-Tabelle:&nbsp;&quot;&nbsp;</span>.&nbsp;<a href="http://www.php.net/mysqli_error">mysqli_error</a><span class="src-sym">(</span><span class="src-var">$db</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a55"></a><span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">query</span><span class="src-sym">(</span><span class="src-str">&quot;CREATE&nbsp;TABLE&nbsp;IF&nbsp;NOT&nbsp;EXISTS&nbsp;threadentry(id&nbsp;INT&nbsp;NOT&nbsp;NULL&nbsp;AUTO_INCREMENT,&nbsp;content&nbsp;TEXT,&nbsp;threadid&nbsp;INT,&nbsp;forumid&nbsp;INT,&nbsp;creator&nbsp;INT,&nbsp;ctime&nbsp;BIGINT,&nbsp;mtime&nbsp;BIGINT,&nbsp;editnote&nbsp;TEXT,&nbsp;uid&nbsp;VARCHAR(120),&nbsp;PRIMARY&nbsp;KEY(id))&quot;</span><span class="src-sym">)&nbsp;</span><span class="src-key">or&nbsp;</span><span class="src-key">die</span><span class="src-sym">(</span><span class="src-str">&quot;Threadentries-Tabelle:&nbsp;&quot;&nbsp;</span>.&nbsp;<a href="http://www.php.net/mysqli_error">mysqli_error</a><span class="src-sym">(</span><span class="src-var">$db</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a56"></a><span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">query</span><span class="src-sym">(</span><span class="src-str">&quot;CREATE&nbsp;TABLE&nbsp;IF&nbsp;NOT&nbsp;EXISTS&nbsp;captcha(id&nbsp;CHAR(20),&nbsp;text&nbsp;VARCHAR(10),&nbsp;time&nbsp;BIGINT,&nbsp;PRIMARY&nbsp;KEY(id))&quot;</span><span class="src-sym">)&nbsp;</span><span class="src-key">or&nbsp;</span><span class="src-key">die</span><span class="src-sym">(</span><span class="src-str">&quot;Captcha-Tabelle:&nbsp;&quot;&nbsp;</span>.&nbsp;<a href="http://www.php.net/mysqli_error">mysqli_error</a><span class="src-sym">(</span><span class="src-var">$db</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a57"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a58"></a>echo&nbsp;<span class="src-str">'Tabellen&nbsp;erfolgreich&nbsp;erzeugt&lt;br/&gt;'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a59"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a60"></a><span class="src-comm">/*&nbsp;Mit&nbsp;notwendigen&nbsp;Werten&nbsp;füllen&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a61"></a><span class="src-comm">/*&nbsp;Erzeugen&nbsp;des&nbsp;Hauptforum&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a62"></a><span class="src-comm">//Forum::store(1,&nbsp;-1,&nbsp;'Hauptforum',&nbsp;'Hauptforum&nbsp;dieses&nbsp;Forums')&nbsp;or&nbsp;die(&quot;Hauptforumerzeugung:&nbsp;&quot;&nbsp;.&nbsp;mysqli_error($db));</span></div></li>
+<li><div class="src-line"><a name="a63"></a><span class="src-var">$db</span><span class="src-sym">-&gt;</span><span class="src-id">query</span><span class="src-sym">(</span><span class="src-str">&quot;INSERT&nbsp;INTO&nbsp;forum(id,&nbsp;title,&nbsp;description,&nbsp;parent,&nbsp;ctime,&nbsp;mtime,&nbsp;uid,&nbsp;creator)&nbsp;VALUES(1,&nbsp;'Hauptforum',&nbsp;'Hauptforum&nbsp;dieses&nbsp;Forums',&nbsp;-1,&nbsp;&quot;&nbsp;</span>.&nbsp;<a href="http://www.php.net/time">time</a><span class="src-sym">(</span><span class="src-sym">)&nbsp;</span>.&nbsp;<span class="src-str">&quot;,&nbsp;&quot;&nbsp;</span>.&nbsp;<a href="http://www.php.net/time">time</a><span class="src-sym">(</span><span class="src-sym">)&nbsp;</span>.&nbsp;<span class="src-str">&quot;,&nbsp;'&quot;&nbsp;</span>.&nbsp;<span class="src-id"><a href="../SampuSnustu/Utils/FSystem.html">FSystem</a></span><span class="src-sym">::</span><a href="../SampuSnustu/Utils/FSystem.html#methodcreateUID">createUID</a><span class="src-sym">(</span><span class="src-sym">)&nbsp;</span>.&nbsp;<span class="src-str">&quot;',&nbsp;'0')&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a64"></a>echo&nbsp;<span class="src-str">'Hauptforum&nbsp;erfolgreich&nbsp;erzeugt&lt;br/&gt;'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a65"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a66"></a><span class="src-doc">&nbsp;*&nbsp;Name&nbsp;des&nbsp;Root&nbsp;Benutzers</span></div></li>
+<li><div class="src-line"><a name="a67"></a><span class="src-doc">&nbsp;*&nbsp;Root&nbsp;Benutzer&nbsp;=&nbsp;Erster&nbsp;Admin&nbsp;der&nbsp;Seite</span></div></li>
+<li><div class="src-line"><a name="a68"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a69"></a><span class="src-var">$rootname&nbsp;</span>=&nbsp;<span class="src-str">'root'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a70"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a71"></a><span class="src-doc">&nbsp;*&nbsp;Passwort&nbsp;des&nbsp;Root&nbsp;Benutzers</span></div></li>
+<li><div class="src-line"><a name="a72"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a73"></a><span class="src-var">$rootpassword&nbsp;</span>=&nbsp;<span class="src-str">'HalloWelt'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a74"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a75"></a><span class="src-doc">&nbsp;*&nbsp;Email-Adresse&nbsp;des&nbsp;Root&nbsp;Benutzers</span></div></li>
+<li><div class="src-line"><a name="a76"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a77"></a><span class="src-var">$rootmailadress&nbsp;</span>=&nbsp;<span class="src-str">'johannes.bechberger@online.de'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a78"></a><span class="src-id"><a href="../SampuSnustu/Utils/FSystem.html">FSystem</a></span><span class="src-sym">::</span><a href="../SampuSnustu/Utils/FSystem.html#methodaddUser">addUser</a><span class="src-sym">(</span><span class="src-var">$rootname</span><span class="src-sym">,&nbsp;</span><span class="src-var">$rootmailadress</span><span class="src-sym">,&nbsp;</span><span class="src-id">true</span><span class="src-sym">,&nbsp;</span><span class="src-var">$rootpassword</span><span class="src-sym">,&nbsp;</span><span class="src-str">'Erster&nbsp;Administrator&nbsp;dieses&nbsp;Forums'</span><span class="src-sym">,&nbsp;</span><span class="src-str">''</span><span class="src-sym">)&nbsp;</span><span class="src-key">or&nbsp;</span><span class="src-key">die</span><span class="src-sym">(</span><span class="src-str">&quot;Rootbenutzererzeugung:&nbsp;&quot;&nbsp;</span>.&nbsp;<a href="http://www.php.net/mysqli_error">mysqli_error</a><span class="src-sym">(</span><span class="src-var">$db</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a79"></a>echo&nbsp;<span class="src-str">'Rootbenutzer&nbsp;erfolgreich&nbsp;erzeugt.'</span><span class="src-sym">;</span></div></li>
+</ol>
+</div>
+        <div class="credit">
+		    <hr />
+		    Documentation generated on Sun, 12 Feb 2012 22:47:21 +0100 by <a href="http://www.phpdoc.org">phpDocumentor 1.4.3</a>
+	      </div>
+      </td></tr></table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,304 @@
+/* 
+    Document   : styles
+    Created on : 14.11.2011, 18:36:15
+    Author     : Johannes Bechberger, Julian Quast
+    Description:
+        Grundstil des Forums
+*/
+@import "fonts.css";
+@import "template.css";
+
+body { 
+   display: block;
+   font-family: 'PT Sans',Arial,Helvetica,sans-serif;
+   z-index: 0;
+}
+#title {
+   text-align: center;
+}
+#content {
+   text-align: left;
+   padding-left: 1cm;
+   padding-right: 1cm;
+}
+textarea, input {
+   font-family: 'PT Sans',Arial,Helvetica,sans-serif;
+   background-color: lightsteelblue;
+}
+textarea {
+   border-radius: 7px; 
+}
+input[type=submit], input[type=reset], input[type=ckeckbox], .button {
+   background-color: lightsteelblue; 
+   border-radius: 7px;
+   border-style: outset;
+   border-width: 1px;
+}
+input[type=submit]:hover, input[type=reset]:hover, input[type=ckeckbox]:hover, .button:hover, .button_selected {
+   background-color: #b9d0e2;
+   border-style: inset;
+}
+.button {
+   text-decoration: none;
+   color: black;
+}
+.edit_div {
+   float: right;
+}
+.combobox {
+   height: 1.2em;
+   overflow: hidden;
+   width: auto;
+   z-index: 100;
+   position: relative;
+   list-style: none;
+   margin-left: 0;
+   padding: 0px;
+}
+.combobox:hover {
+   overflow: visible;
+   max-height: 150px;
+}
+.combobox li {
+   background-color: lightsteelblue;
+   list-style-type: none;
+   width: inherit;
+}
+.combobox li:first-child {
+   border-radius: 7px;
+}
+.combobox:hover li:first-child {
+   border-radius: 7px 7px 0px 0px;
+}
+.combobox li:last-child {
+   border-radius: 0px 0px 7px 7px;
+}
+.combobox li:hover {
+   background-color: steelblue;
+}
+.combobox li a {
+   color: black;
+   text-decoration: none;
+   margin: 7px;
+}
+.textbox {
+   margin-top: 10px;
+   height: 20px;
+   overflow: hidden;
+   width: inherit;
+   font-size: 0.8em;
+   color: gray;
+   float: none;
+   width: 300px;
+}
+.textbox:hover {
+   overflow: visible;
+   max-height: 250px;
+   line-height: 0.0;
+   color: white;
+   z-index: 1000;
+/*   position: absolute;*/
+   padding: 0px;
+   height: 20px;
+}
+.textbox:hover .text {
+   text-align: center;
+   height: 0px;
+   opacity: 0;
+}
+.textbox:hover .edit_div {
+   z-index: 1000;
+   background-color: #b9d0e2;
+   width: 300px;
+   border-radius: 7px;
+}
+.textbox form {
+   width: inherit;
+   line-height: 1;
+   font-size: 1em;
+}
+.textbox:hover form input[type=text]{
+   border-radius: 7px;
+   border-color: steelblue;
+   width: 295px;
+   font-size: 0.9em;
+}
+.textbox textarea {
+   max-height: 300px;
+   width: 295px;
+   border-style: solid;
+   border-color: steelblue;
+   font-size: 0.9em;
+}
+.textbox .create_header {
+   font-size: 0.8em;
+   color: gray;
+}
+
+.debug_table {
+   font-size: 0.7em;
+   background-color: steelblue;
+   z-index: 1000;
+   left: 300px;
+   position: fixed;
+   overflow: visible;
+}
+
+
+#location {
+   margin-bottom: 1cm;
+}
+#location .arrow {
+   font-weight: bolder;
+}
+
+.entry_table {
+   border-style: dotted;
+   border-color: #b7cde0;
+   width: 100%;
+   margin-right: 1cm;
+}
+.entry_table tr, .entry_table td {
+
+}
+.header {
+   border-color: blue;
+   background-color: steelblue;
+   color: lightsteelblue;
+   border-style: solid;
+   border-color: #b7cde0;
+   border-width: 2px;
+   padding-left: 0.2cm;
+} 
+.header td a {
+   color: lightsteelblue !important;
+   width: 100%;
+}
+.description_header {
+   background-color: steelblue;
+   color: darkblue;
+} 
+.description {
+   padding-left: 0.5cm;
+   padding-right: 0.5cm;
+}
+.description_content {
+   margin-bottom: 0.5cm;
+   padding-left: 0.5cm;
+   padding-right: 0.5cm;
+   z-index: 0;
+}
+.entry_header {
+   margin-top: 0.5cm;
+}
+.entry_content {
+   padding-left: 0.5cm;
+   padding-right: 0.5cm;
+}
+.signatur {
+   margin-top: 7px;
+   padding-top: 7px;
+   border-top-color: #505050;
+   border-top-width: 1px;
+   border-top-style: solid;
+   font-size: 0.95em;
+   color: #505050;
+}
+.info {
+   text-align: right;
+   max-width: 200px;
+   font-size: 0.7em;
+}
+.chat_table {
+   max-width: 100%;
+}
+.chat_div {
+   max-height: 80%;
+}
+.chattime, .chatuser {
+   font-size: 0.8em;
+   width: 50px;
+}
+.chattime {
+   color: grey;
+}
+.chatuser {
+   color: #505050;
+   border-right-width: 1px;
+}
+.chat_content {
+   max-height: 100px;
+   overflow: scroll;
+}
+.cmd_result {
+   font-size: 0.9em;
+   max-height: 100px;
+   overflow: auto;
+   max-width: 90%;
+}
+.go_back {
+   margin-top: 1cm;
+}
+.colored_table {
+   background-color: lightsteelblue;
+   border-color: steelblue;
+   border-radius: 10px 10px 10px 10px;
+   border-style: solid;
+}
+.colored_table tr {
+   background-color: lightskyblue;
+   border-color: deepskyblue;
+   border-style: solid;
+}
+.colored_table tr:hover {
+   background-color: deepskyblue;
+   border-color: lightsteelblue;
+}
+.colored_table th, .colored_table th:hover {
+   background-color: steelblue;
+}
+.entry_edit_note {
+   font-size: 0.9em;
+   color: gray;
+}
+#chat_container, #chatuserlist_container {
+   margin-left: 5px;
+   margin-right: 5px;
+   border-radius: 5px;
+   background-color: #b7cde0;
+}
+#chat_table_container {
+   width: auto;
+   margin-left: 30px;
+   margin-right: 30px;
+}
+#chat_div {
+   height: 400px;
+   overflow: auto;
+}
+#chat_container, #chat_table, .chatmsg {
+   width: 400px;
+   max-width: 400px;
+   overflow-wrap: break-word;
+}
+#chatuserlist {
+   height: 400px;
+}
+#chatuserlist_header {
+   font-weight: bold;
+   margin-bottom: 5px;
+}
+
+/*
+* @author Julian
+*/
+.success {
+   color: green;
+}
+
+/*
+* @author Julian
+*/
+.error {
+   color: red;
+}

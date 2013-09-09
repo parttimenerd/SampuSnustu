@@ -1,0 +1,451 @@
+@import "fonts.css";
+
+body {
+    font-family: 'PT Sans Narrow',Arial;
+}
+#title {
+    color: black;
+    margin: -5px auto;
+    text-align: center;
+}
+#head_row td {
+    border-radius: 15px 15px 0 0;
+}
+#content_row > td {
+    border-radius: 0 0 15px 15px;
+}
+#head_row > td, #content_row > td {
+    background-color: lightsteelblue;
+}
+#freibad_bild {
+    height: 100px;
+    width: 660px;
+}
+#pingpong {
+    color: dimgrey;
+    height: 100px;
+    width: 660px;
+    border-width: 0px;
+    border-style: solid;
+    border-color: dimgrey;
+}
+#wappen {
+    width: 45px;
+}
+#navigation a {
+    text-decoration: none;
+}
+.combobox, .combobox_like {
+    height: 1.15em;
+    list-style: none outside none;
+    margin-left: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: auto;
+    z-index: 100;
+}
+.combobox:hover {
+    max-height: 150px;
+    overflow: visible;
+}
+.combobox li, .combobox_like {
+    background-color: cornflowerblue;
+    list-style-type: none;
+    width: inherit;
+    color: lavenderblush;
+}
+.combobox li:first-child, .combobox_like {
+    border-radius: 7px 7px 7px 7px;
+}
+.combobox:hover li:first-child {
+    border-radius: 7px 7px 0 0;
+}
+.combobox li:last-child {
+    border-radius: 0 0 7px 7px;
+}
+.combobox li:hover a, .combobox_like:hover a {
+    color: blue;
+}
+.combobox li:hover, .combobox_like:hover {
+    color: blue;
+}
+.combobox .n_link:hover {
+    background-color: cornflowerblue;
+    color: lavenderblush;
+}
+.combobox li a, .combobox_like a {
+    color: lavenderblush;
+    margin: 7px;
+    text-decoration: none;
+}
+#foottext {
+    text-align: center;
+    z-index: 0;
+}
+#foottext table {
+    font-size: 7pt;
+    margin: 0.3cm auto;
+    text-align: center;
+    width: 100%;
+}
+#foottext span {
+    text-align: center;
+}
+#foottext a {
+    color: black;
+    text-decoration: none;
+}
+#foottext a:hover {
+    text-decoration: underline;
+}
+#foottext .delimiter {
+    color: darkgrey;
+    opacity: 0.7;
+}
+#foottext .text {
+    opacity: 0.8;
+}
+#foottext .text:hover {
+    opacity: 1;
+}
+#html5logo {
+    height: 10px;
+    margin-bottom: -1px;
+    text-align: center;
+}
+#content {
+    font-size: 10pt;
+    height: auto;
+    margin: 30px auto 40px;
+    max-width: 620px;
+    text-align: left;
+}
+#content table {
+    border-radius: 7px 7px 7px 7px;
+}
+#content table td {
+    border-radius: 4px 4px 4px 4px;
+}
+#content h1 {
+    text-align: center;
+}
+#content a {
+    color: darkblue;
+    text-decoration: none;
+}
+#content a:hover {
+    text-decoration: underline;
+}
+#content a:visited {
+    color: darkblue;
+    text-decoration: none;
+}
+.news_content_div {
+    border-bottom: 0.5cm none;
+    border-top: 0.5cm none;
+}
+.news_content_div img {
+    text-align: center;
+    width: 100%;
+}
+h3 {
+    color: black;
+}
+h3 a {
+    color: black;
+}
+img {
+    border-width: 0;
+}
+.fsizer {
+}
+.fsizer a {
+    border: 1px dotted #CCCCCC;
+    color: #242424;
+    cursor: pointer;
+    display: block;
+    float: left;
+    letter-spacing: 0;
+    line-height: 100%;
+    margin-bottom: 1px;
+    margin-top: 1px;
+    opacity: 0.75;
+    text-align: center;
+    text-decoration: none;
+    width: 24px;
+}
+.fsizer a:hover {
+    background: none repeat scroll 0 0 #EBEBEB;
+    opacity: 1;
+    text-decoration: none;
+}
+.fsizer a#fs_sml {
+    font-size: 9px;
+    height: 15px;
+    padding-top: 5px;
+}
+.fsizer a#fs_med {
+    font-size: 13px;
+    height: 17px;
+    padding-top: 3px;
+}
+.fsizer a#fs_lrg {
+    font-size: 16px;
+    height: 18px;
+    padding-top: 2px;
+}
+.fsizer a.fsactive {
+    background: none repeat scroll 0 0 #EBEBEB;
+    color: #000000;
+    cursor: default;
+}
+#toolbar {
+    height: 100%;
+    left: 10px;
+    position: fixed;
+    text-align: center;
+    width: 30px;
+    z-index: 101;
+}
+.toolicons {
+    border: 1px dotted transparent;
+    cursor: pointer;
+    float: left;
+    margin-bottom: 1px;
+    margin-top: 1px;
+    opacity: 0.75;
+    width: 24px;
+}
+.toolicons:hover {
+    border: 1px dotted transparent;
+    opacity: 1;
+}
+#logos a img {
+    height: 62px;
+    margin-left: 15px;
+    margin-right: 15px;
+    opacity: 0.85;
+    text-align: center;
+}
+#logos a img:hover {
+    opacity: 1;
+}
+#logos {
+    margin-bottom: 10px;
+    text-align: center;
+}
+#logos a {
+    float: left;
+    height: 62px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.partneritem {
+    font-size: 110%;
+}
+#gallery {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    text-align: center;
+}
+#gallery img {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: cornflowerblue;
+    border-style: solid;
+    border-width: 5px 5px 20px;
+}
+#gallery a:hover img {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #5A8AE1;
+    border-style: solid;
+    border-width: 5px 5px 20px;
+    color: #FFFFFF;
+}
+#gallery a:hover {
+    color: #5A8AE1;
+}
+#Choco_overlay {
+    background: none repeat scroll 0 0 steelblue;
+    display: none;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+#Choco_content {
+    display: none;
+    height: 600px;
+    left: 50%;
+    margin-left: -400px;
+    margin-top: -300px;
+    position: fixed;
+    top: 50%;
+    width: 800px;
+    z-index: 1001;
+}
+#Choco_aller_gauche {
+    background-image: url("javascript/plugins/images/gauche.gif");
+    background-position: 12% 50%;
+    float: left;
+    left: -100px;
+}
+#Choco_aller_droite {
+    background-image: url("javascript/plugins/images/droite.gif");
+    background-position: 88% 50%;
+    float: right;
+    left: 100px;
+}
+.Choco_fleches {
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: none;
+    height: 100%;
+    position: relative;
+    width: 49%;
+}
+#Choco_container_photo {
+    text-align: center;
+}
+#Choco_container_description {
+    clear: both;
+    color: #505050;
+    display: none;
+    font-family: Tahoma;
+    font-size: 12px;
+    height: 50px;
+    padding: 0;
+    position: relative;
+    top: 20px;
+    width: 100%;
+}
+#Choco_container_titre {
+    float: left;
+    padding: 5px;
+}
+#Choco_container_via {
+    float: right;
+    padding: 5px;
+}
+#Choco_container_via a {
+    color: gray;
+}
+#Choco_container_via a:hover {
+    background: none repeat scroll 0 0 gray;
+    color: white;
+}
+#Choco_close {
+    background-image: url("/javascript/plugins/images/close.gif");
+    background-repeat: no-repeat;
+    cursor: pointer;
+    height: 25px;
+    width: 30px;
+    z-index: 1002;
+}
+#Choco_grandeImage {
+    display: none;
+    position: relative;
+    top: 20px;
+}
+.albumlistitem, .bonmotlistitem {
+    color: black;
+    font-size: 105%;
+    line-height: 2;
+}
+.developer_pages {
+    background-color: black;
+}
+.stats_table .zehn {
+    color: blue;
+}
+.stats_table .f�nf {
+    color: green;
+}
+.stats_table td {
+    text-align: right;
+}
+.stats_table .text {
+    text-align: left;
+}
+.stats_table .gesamt {
+    font-weight: bold;
+    text-align: left;
+}
+.stats h1, h2, h3, h4 {
+    text-align: center;
+}
+.mail_label {
+    display: block;
+    float: left;
+    opacity: 0.9;
+    width: 94px;
+}
+.mail_zu, .mail_von, .mail_betreff, .mail_name {
+    width: 300px;
+}
+.mail_textarea {
+    border-radius: 6px 6px 6px 6px;
+    font-family: 'PT Sans Narrow',Arial;
+    height: 4cm;
+    margin-left: 0;
+    margin-right: 0;
+    width: 395px;
+}
+.mail_div input {
+    border-radius: 6px 6px 6px 6px;
+    font-family: 'PT Sans Narrow',Arial;
+}
+.mail_div .mail_button, .mail_abbrechen {
+    background-color: cornflowerblue;
+    border-radius: 7px 7px 7px 7px;
+    cursor: pointer;
+}
+.mail_div .mail_button:hover, .mail_abbrechen:hover {
+    color: darkblue;
+}
+.mail_div {
+    border-color: grey;
+    height: auto;
+    margin: 1.5cm auto;
+    width: 400px;
+}
+.mail_div div {
+    width: 400px;
+}
+.mail_label {
+    min-width: 2cm;
+}
+.mail_header {
+    color: darkblue;
+    cursor: pointer;
+}
+.mail_header:hover {
+    text-decoration: underline;
+}
+#edit {
+    height: auto;
+    width: 400px;
+}
+.editlabel {
+    min-width: 90px;
+    width: 90px;
+}
+#edit input {
+    width: 300px;
+}
+#edit .textarea {
+    height: 300px;
+    width: 400px;
+}

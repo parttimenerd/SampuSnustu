@@ -1,0 +1,85 @@
+Grundkonstrukt des Projekts - Ben�tigte Grundklassen mit wichtigen �ffentlichen Methoden
+
+Legende: < - erbt von
+
+System - Singleton 
+	getChat() - aktuelles Chatobjekt - Jo
+	getUser() - aktueller Benutzer - Ju
+	getForum() - aktuelles Forum - Jo
+	getMainForum() - gibt das Hauptforum zur�ck - Jo
+	addUser() - f�gt denm Benutzer hinzu - Ju
+	removeUser() - l�scht den Benutzer - Ju
+	reset() - resettet Forum und Chat - Jo
+	
+HObject - HTML-Objekt - Jo
+	createHTML() - produziert den HTML-Code und gibt ihn zur�ck (abstrakte Methode)
+	getJS() - gibt den JS-Code zur�ck
+	getCreateTime() - gibt den Erstellzeitpunkt zur�ck
+	getLastModifiedTime() - gibt den Zeitpunkt der letzten �nderung zur�ck
+	getID()
+        __toString() - Aufruf der createHTML() Methode
+	
+Chat < HObject - Jo
+	getMessages() - gibt die Nachrichten als Array zur�ck
+	processCommand() - verarbeitet einen Befehl und gibt das Ergebnis zur�ck
+	addMessage() - f�gt eine Nachricht hinzu
+	getUsers() - gibt ein Array der im Chat anwesenden Benutzer aus
+	getUserList() - gibt die Benutzerliste als HTML-Code zur�ck
+	getCurrentChatLog() - gibt das aktuelle Chatlogobjekt zur�ck
+	getChatLogs() - gibt eine Liste der Chatlogs zur�ck
+	
+/*ChatLog < HObject - enth�lt die Chatkommunikation des aktuellen Tages - Jo
+	getPlainText()*/
+
+Message < HObject - Chat-Nachricht - Jo
+	getContent() - gibt den Nachrichteninhalt zur�ck
+	getSender() - gibt den Sender zur�ck
+	
+User < HObject - Ju
+	getName()
+	getEntryCount() - Anzahl der gesammten Beitr�ge des Benutzers
+	getMailAdress()
+	remove() - Benutzer l�schen
+	isAdmin()
+	isInChat()
+	isCurrentUser()
+	isActive()
+	getEntries() - gibt die Beitr�ge des Benutzers zur�ck
+	getThreads() - gibt die Threads zur�ck, in denen der Benutzer etwas geschrieben hat
+	getLastEntries() - gibt die aktuellen Beitr�ge des Benutzers zur�ck
+	getLastThread() - gibt die Threads zur�ck, in denen der Benutzer zuletzt etwas geschrieben hat
+	getConfigPage() - gibt die Einsstellungsseite des Benutzers zur�ck, sofern es sich um den aktuellen Benutzer handelt
+	getSettings() - gibt die Einstellungen des Benutzers zur�ck
+	getSignature() - gibt die Signatur als String zur�ck
+
+/*Settings - Ju*/
+
+Entry < HObject - Forum-Beitrag - Jo
+	getUser()
+	getTime() - gibt den Erstellzeitpunkt zur�ck
+	getContent() - gibt den Inhalt zur�ck
+	getThread() - gibt den Thread zur�ck, in dem der Beitrag geschrieben wurde
+	setContent() - editiert den Inhalt
+	
+ConfigPage < HObject - Einstellungsseite des Benutzers - Ju
+
+Thread < HObject - Jo
+	getEntries() - gibt die Beitr�ge im Thread zur�ck
+	getEntryCount() - gibt die Anzahl der Beitr�ge im Thread zur�ck
+	getName()
+	removeEntry() - l�scht den Beitrag
+	getForum() - gibt das Elternforum zur�ck
+	isClosed()
+	close() - schlie�t den Thread
+	addEntry() - f�gt den Beitrag hinzu
+
+Forum < HObject - Jo
+	getForums() - gibt die Subforen als Array zur�ck
+	getThreads()
+	isMainForum()
+	getThreadCount() - gibt die Anzahl der Threads zur�ck
+	getForumCount() - gibt die Anzahl der Foren zur�ck
+	removeThread() - l�scht den Thread
+	removeForum() - l�scht das Forum
+	getParent() - gibt das Elternforum zur�ck
+	getName()

@@ -1,0 +1,59 @@
+/* 
+    Document   : fonts
+    Created on : 09.12.2011, 21:42:53
+    Author     : Johannes Bechberger
+    Description:
+        Fonts...
+*/
+
+/* ParaType Sans Font */
+@font-face {font-family: 'PT Sans'; 
+	src: url('fonts/paratype_sans/pts55f_w.eot'); 
+	src: local('PT Sans'), url('fonts/paratype_sans/PTS55F_W.woff') format('woff'),url('fonts/paratype_sans/PTS55F_W.ttf') format('truetype'), url('fonts/paratype_sans/PTS55F_W.svg#PTSans-Regular') format('svg');}
+
+@font-face {font-family: 'PT Sans'; 
+	font-style: italic;
+	src: url('fonts/paratype_sans/pts56f_w.eot'); 
+	src: local('PT Sans Italic'), url('fonts/paratype_sans/PTS56F_W.woff') format('woff'),url('fonts/paratype_sans/PTS56F_W.ttf') format('truetype'), url('fonts/paratype_sans/PTS56F_W.svg#PTSans-Italic') format('svg');}
+
+@font-face {font-family: 'PT Sans';
+	src: url('fonts/paratype_sans/pts75f_w.eot');
+	font-style: normal;
+	font-weight: bold; 
+	src: local('PT Sans Bold'), url('fonts/paratype_sans/PTS75F_W.woff') format('woff'),url('fonts/paratype_sans/PTS75F_W.ttf') format('truetype'), url('fonts/paratype_sans/PTS75F_W.svg#PTSans-Bold') format('svg');}
+
+@font-face {font-family: 'PT Sans';
+	font-style: italic;
+	font-weight: bold; 
+	src: url('fonts/paratype_sans/pts76f_w.eot'); 
+	src: local('PT Sans Bold Italic'), url('fonts/paratype_sans/PTS76F_W.woff') format('woff'),url('fonts/paratype_sans/PTS76F_W.ttf') format('truetype'), url('fonts/paratype_sans/PTS76F_W.svg#PTSans-BoldItalic') format('svg');}
+
+@font-face {font-family: 'PT Sans Caption'; 
+	src: url('fonts/paratype_sans/ptc55f_w.eot');
+	src: local('PT Sans Caption'), url('fonts/paratype_sans/PTC55F_W.woff') format('woff'),url('fonts/paratype_sans/PTC55F_W.ttf') format('truetype'), url('fonts/paratype_sans/PTC55F_W.svg#PTSans-Caption') format('svg');}
+
+@font-face {font-family: 'PT Sans Caption';
+	font-weight: bold; 
+	src: url('fonts/paratype_sans/ptc75f_w.eot');
+	src: local('PT Sans Caption Bold'), url('fonts/paratype_sans/PTC75F_W.woff') format('woff'),url('fonts/paratype_sans/PTC75F_W.ttf') format('truetype'), url('fonts/paratype_sans/PTC75F_W.svg#PTSans-CaptionBold') format('svg');}
+
+@font-face {font-family: 'PT Sans Narrow';
+	src: url('fonts/paratype_sans/ptn57f_w.eot');
+	src: local('PT Sans Narrow'), url('fonts/paratype_sans/PTN57F_W.woff') format('woff'),url('fonts/paratype_sans/PTN57F_W.ttf') format('truetype'), url('fonts/paratype_sans/PTN57F_W.svg#PTSans-Narrow') format('svg');}
+
+@font-face {font-family: 'PT Sans Narrow';
+	font-weight: bold; 
+	src: url('fonts/paratype_sans/ptn77f_w.eot');
+	src: local('PT Sans Narrow Bold'), url('fonts/paratype_sans/PTN77F_W.woff') format('woff'),url('fonts/paratype_sans/PTN77F_W.ttf') format('truetype'), url('fonts/paratype_sans/PTN77F_W.svg#PTSans-NarrowBold') format('svg');}
+
+/* Atari Classic */
+@font-face {font-family: 'Atari Classic Chunky';
+            src: url('fonts/acttfpc/ATARCC__.TTF');
+            font-weight: normal;
+            src: local('Atari Classic Chunky'), url('fonts/acttfpc/ATARCC__.TTF') format('truetype');}
+@font-face {font-family: 'Atari Classic Smooth';
+            src: url('fonts/acttfpc/ATARCS__.TTF');
+            src: local('Atari Classic Smooth'), url('fonts/acttfpc/ATARCS__.TTF') format('truetype');}
+@font-face {font-family: 'Atari Classic Extrasmooth';
+            src: url('fonts/acttfpc/ATARCE__.TTF');
+            src: local('Atari Classic Extrasmooth'), url('fonts/acttfpc/ATARCE__.TTF') format('truetype');}

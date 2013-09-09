@@ -1,0 +1,216 @@
+/* 
+    Document   : template.css
+    Created on : 18.01.2012, 19:04:20
+    Author     : Johannes Bechberger
+    Description:
+        Non-Content-Div-Css-Stylerules
+*/
+
+#title {
+    font-size: 70px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+#head {
+    text-decoration: none;
+}
+#page_content {
+    background-color: steelblue;
+    border-radius: 15px 15px 15px 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3em;
+    margin-bottom: 0.7em;
+    text-align: center;
+    top: 10px;
+    max-width: 660px;
+    min-width: 660px;
+    width: auto;
+}
+#toolbar_top {
+    position: fixed;
+    width: 100%;
+    background-color: #3C578C;
+    z-index: 101;
+    top: 0px;
+    left: 0px;
+    height: 1.5em;
+    color: lightsteelblue;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.usercol {
+    width: 300px;
+    max-width: 300px;
+}
+.section_choose {
+    text-align: center;
+/*    margin-left: 1cm;
+    margin-right: 1cm;*/
+}
+.section_choose .chat_choose {
+    margin-left: 1cm;
+}
+.section_choose .chat_choose, .section_choose .forum_choose {
+    margin-right: 0.5cm;
+    padding-left: 0.5cm;
+    padding-right: 0.5cm;
+    width: auto;
+}
+.searchcol {
+    text-align: right;
+}
+.searchcol div {
+    text-align: right;
+    margin-left: auto;
+    margin-right: -3px;
+}
+.rss_buttoncol {
+    width: 0px;
+}
+.rsslink {
+    width: 24px;
+}
+.search {
+    width: auto;
+    height: 10px;
+    margin-top: 0.25em;
+}
+.search .search_field {
+    border-radius: 7px;
+    width: 164px;
+    margin-left: auto;
+    border-style: solid;
+    border-color: #365386;
+}
+.search .search_field {
+    border-radius: 7px;
+    width: 164px;
+    margin-left: auto;
+}
+.search input[type=submit] {
+    background-image: url("../img/Suchen.png");
+    border-style: outset;
+    border-color: #365386;
+}
+.search .options_header {
+    font-weight: bold;
+    text-align: center;
+}
+.search .options {
+    height: 0px;
+    overflow: hidden;
+    visibility: hidden;
+    width: 100%;
+    z-index: 102;
+    position: relative;
+}
+.search:hover .options {
+    height: auto;
+    overflow: visible;
+    visibility: visible;
+    position: relative;
+    width: 185px;
+    border-radius: 0px 0px 7px 7px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    background-color: lightsteelblue;
+    color: black;
+    text-align: center;
+    background-color: #3C578C;
+}
+.search:hover .options_header {
+    text-align: center;
+}
+.search:hover .options_items {
+    background-color: lightsteelblue;
+    border-radius: 5px;
+    text-align: left;
+    margin: 2px;
+}
+.search:hover .options_items .userfilter {
+    width: 110px;
+    border-radius: 7px;
+}
+.search_datalist {
+    max-height: 100px;
+}
+.login_form {
+    width: auto;
+    height: 10px;
+    margin-top: 0.25em;
+}
+.usercol .button {
+    min-width: 100px;
+    text-align: center;
+}
+.login_form .name {
+    border-radius: 7px;
+    width: 164px;
+    margin-left: auto;
+    border-style: solid;
+    border-color: #365386;
+    border-radius: 7px;
+    width: 164px;
+    margin-left: auto;
+}
+.login_form .menu {
+    height: 0px;
+    overflow: hidden;
+    visibility: hidden;
+    width: 100%;
+    z-index: 102;
+    position: relative;
+}
+.login_form:hover .menu {
+    height: auto;
+    overflow: visible;
+    visibility: visible;
+    position: relative;
+    width: 185px;
+    border-radius: 0px 0px 7px 7px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    background-color: lightsteelblue;
+    color: black;
+    text-align: center;
+    background-color: #3C578C;
+}
+.login_form:hover .menu {
+    background-color: lightsteelblue;
+    border-radius: 5px;
+    text-align: left;
+    margin: 2px;
+}
+#quote {
+    background-image: url("../img/quote.gif");
+    background-repeat: no-repeat;
+    background-size: auto 13px;
+}
+.randomquotediv {
+    width: inherit;
+    border-radius: 7px;
+    background-color: lightsteelblue;
+    margin: 12px 7px 10px 7px;
+} 
+.randomquote {
+    text-align: left;
+    margin: 5px;
+    padding: 4px;
+    font-size: 0.9em;
+    line-break: loose;
+    text-align: justify;
+    color: #365386;
+}
+#foottext {
+    font-size: 0.7em;
+    opacity: 0.5;
+}
+#foottext:hover {
+    opacity: 0.8;
+}

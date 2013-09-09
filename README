@@ -1,0 +1,34 @@
+﻿SampuSnustu
+================
+Ein einfaches Forum welches ich mithilfe von Julian Quast im Rahmen einer Projektarbeit des Informatik-Kurses in der Oberstufe entwickelt habe (und das mit 15 Punkten benotet wurde). Es ist das erste größere Projekt, an dem ich im Bereich der Webentwicklung gearbeitet habe - das Design sieht dem entsprechend aus.
+Noch was zum Namen: sampu snustu ist Lojban und bedeutet soviel wie "einfaches Forum".
+Das Projekt wird nicht mehr weiterentwickelt - die Entwicklung wurde im Februar des Jahres 2012 mit Beendigu ng der Projektarbeit eingestellt.
+
+
+Lizenz der Captcha-Audiodateien: CC-BY-SA
+
+
+Das folgende ist das ursprüngliche README.
+
+
+SampuSnustu Projektarbeit
+------------------------------
+Im folgenden ist aufgeführt, wie die Projektarbeit auf einem Server zum Laufen gebracht werden kann:
+Zuerst einmal ist es sinnvoll die Projektarbeit in einen Ordner "SampuSnustu" direkt im htdocs Ordner des Servers zu entpacken, wenn ein anderer Ordner verwendet wird, muss der Wert der Konstanten URL in der Klasse FSystem im Ordner php an den neuen Wert angepasst werden (es ist der Pfad der Projektarbeitdateien in Relation zur URL des Webservers), der Name des Seite kann über den Wert der TITLE Konstanten der FSystem Klasse bestimmt werden. Nun muss nur noch die Datei dbadmin.php im Ordner php per Browser aufgerufen werden und es wird eine Datenbank mit Namen "sampusnustu" auf dem MySQL-Server erzeugt, mit allen benötigten Tabellen und einem Root-Benutzer mit Adminrechten. (Wenn dies nicht von Erfolg gekrönt sein sollte, einfach Datenbank per Hand erzeugen und Tabellen per Aufruf der Datei erstellen lassen.) Die einzelnen Eigenschaften (Password, Server, etc.) der Datenbank können in der Datei dbadmin.php mit Hilfe des Setztens der jeweiligen Variablen festgelegt werden, müssen jedoch bis auf die Root-Benutzer spezifischen Setzungen auch in der Datei FDB.php im selben Ordner getätigt werden. Jetzt dürfte die Datenbank einsatzbereit sein und die Projektarbeitsseite funktionieren. (Ich schreibe "dürften", weil es bei der Portierung der Seite auf einen Remoteserver zu vorher unbekannten Fehlern gekommen ist. Bei Problemen können sie mich per bekannter Email-Adresse kontaktieren, ich liefere dann gerne einen MySQL-Datenbankdump. [Anmerkung Johannes Bechberger])
+
+Zur Arbeitsteilung innerhalb der Projektarbeitsgruppe:
+Johannes Bechberger war zuständig bzw. hällt das Copyright bzw. ist Urheber der folgenden Klassen bzw. Dateien und Codes:
+Captcha-Klasse (mit den Audiodateien), Chat-, ChatServerApplication-, Entry-, FDB-, FObject-, Forum-, FSystem-, HObject-, HTMLBeautifier-, Message-, Page-, Quote-, RSS-, Search-, Template-, Thread-Klasse bzw. Interface, useful_functions.php, spl_autoload.php, dbadmin.php, CSS, quote.gif, Suchen.png, JavaScript (script.js, pingpong.js)
+Julian Quast war zuständig bzw. hällt das Copyright folgender Klassen bzw. Dateien:
+ConfigPage-, Login-, Register-, User-, UserEdit-, UserList-Klasse, testing.php, register_1.php
+Der Rest des Codes und der anderweitigen Dateien ist entweder gemeinfrei (feed-icon-24x24.gif), der Urheber bzw. Autor ist klar ersichtlich (Fonts, HTMLPurifier, PHP-Websocket) oder die Datei hat keine ausreichende Schöpfungh�he das eine Kennzeichnung des Autors notwendig ist (index.php, ...).
+Wenn Code von einem der beiden Projektarbeiter in der Datei vorhanden ist, für die der jeweils andere zuständig ist, ist dies im dazugehörigen Kommentar ausgewiesen.
+
+Die ausführliche Dokumentation des Codes liegt im Ordner docs, sie wurde per phpDocumentor aus den Kommentaren im Code erzeugt.
+
+Als Einrückstil wird durchgehend der K&R-Stil verwendet, mit einer Einrücktiefe von 3, da diese Zahl näher an der wunderschönen Zahl π ist. Ob der Einrückstil und die Einrücktiefe nun sinnvoll steht hier nicht zur Debatte oder um es mit einem Zitat aus dem Jargon File zum Thema Einrückstil (http://catb.org/jargon/html/I/indent-style.html) zu sagen:
+Doubtless these issues will continue to be the subject of holy wars.
+
+Noch ein kurzer Hinweis zur Benutzung des Chats:
+Wenn sie als Nachrichtentext "help" eingeben und dann auf "Absenden" klicken, werden die verfügbaren Nachrichteneingabekommandos als Liste mit Beschreibung angezeigt.
+Wenn sie eine leere Nachricht absenden, wird diese nicht gespeichert, somit kann dadurch der Chat aktualisiert werden.

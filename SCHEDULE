@@ -1,0 +1,17 @@
+Mitte Dezember:
+    - Projekt sollte soweit fertig sein, dass das Projekt testweise auf die Freibadseite 
+      gestellt werden kann um somit erste Meinungen Außenstehender einzuholen, das
+      bedeutet aber auch, dass ab jetzt keine grundlegenden Änderungen an der
+      Datenbankstruktur gemacht werden dürfen
+    - Dokumentation und Design sind bis jetzt vernachlässigbar
+Anfang Januar:
+    - Bis zu diesem Zeitpunkt sollten alle Funktionen programmiert sein
+    - FEATURE FREEZE:
+        Es sollten ab jetzt keine neuen Funktionen hinzugefügt werden, nur noch
+        kleinere Anpassungen, Verbesserungen und Bugfixes sind erlaubt
+    - An Dokumentation und Design sollte ab jetzt hauptsächlich gearbeitet werden
+Mitte Januar:
+    - Dokumentation und Design sollten fertig sein
+    - Ab jetzt sollte das Hauptaugenmerk auf dem ausgiebigen Testen und der Einholung
+      von Meinungen Außenstehender zur Verbesserung von Feinheiten des Projekts und
+      des Bugfixens liegen

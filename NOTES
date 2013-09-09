@@ -1,0 +1,11 @@
+OAuth with Twitter:
+http://rndm-snippets.blogspot.com/2010/10/using-oauth-php-to-retrieve-email.html
+
+HTML Purifier:
+<?php
+    require_once '/php/foreign_code/htmlpurifier-4.3.0/library/HTMLPurifier.auto.php';
+    
+    $purifier = new HTMLPurifier();
+    $clean_html = $purifier->purify($dirty_html);
+?>
+Implement in FSystem::filter($dirty_html)
